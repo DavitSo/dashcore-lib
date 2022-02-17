@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const webpackConfig = require('./webpack.config');
 
 module.exports = (config) => {
   config.set({
@@ -9,23 +10,8 @@ module.exports = (config) => {
       './test.spec.js': ['webpack'],
     },
     webpack: {
-      resolve: {
-        fallback: {
-          fs: false,
-          crypto: require.resolve('crypto-browserify'),
-          buffer: require.resolve('buffer/'),
-          assert: require.resolve('assert-browserify'),
-          stream: require.resolve('stream-browserify'),
-          path: require.resolve('path-browserify'),
-          url: require.resolve('url/'),
-        }
-      },
-      plugins: [
-        new webpack.ProvidePlugin({
-          Buffer: ["buffer", "Buffer"],
-          process: 'process/browser',
-        })
-      ],
+      resolve: webpackConfig.resolve, 
+      plugins: webpackConfig.plugins,
       module: {
         rules: [
           { test: /\.dat$/, use: 'raw-loader' },

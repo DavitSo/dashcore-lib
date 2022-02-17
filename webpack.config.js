@@ -4,17 +4,25 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
   entry: ['./index.js'],
+  mode: 'production',
   resolve: {
     fallback: {
       fs: false,
       crypto: require.resolve('crypto-browserify'),
       buffer: require.resolve('buffer/'),
-      assert: require.resolve('assert-browserify'),
-      stream: require.resolve('stream-browserify'),
-      path: require.resolve('path-browserify'),
+      assert: require.resolve('assert/'),
       url: require.resolve('url/'),
-    }
+      path: require.resolve('path-browserify'),
+      stream: require.resolve('stream-browserify'),
+      util: require.resolve('util/'),
+      os: require.resolve('os-browserify/browser'),
+      zlib: require.resolve('browserify-zlib'),
+      events: require.resolve('events/'),
+      string_decoder: require.resolve('string_decoder/'),
+    },
+    extensions: ['.ts', '.js', '.json'],
   },
+	
   target: 'web',
   plugins: [
       new webpack.ProvidePlugin({
