@@ -17,7 +17,7 @@ module.exports = {
       util: require.resolve('util/'),
       os: require.resolve('os-browserify/browser'),
       zlib: require.resolve('browserify-zlib'),
-      events: require.resolve('events/'),
+      events: require.resolve('events-browserify'),
       string_decoder: require.resolve('string_decoder/'),
     },
     extensions: ['.ts', '.js', '.json'],

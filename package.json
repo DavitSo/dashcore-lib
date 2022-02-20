@@ -126,7 +126,8 @@
     "eslint-config-prettier": "^8.3.0",
     "inherits": "=2.0.1",
     "lodash": "^4.17.20",
-    "unorm": "^1.6.0"
+    "unorm": "^1.6.0",
+    "events-browserify": "0.0.1"
   },
   "devDependencies": {
     "browserify-zlib": "^0.2.0",
