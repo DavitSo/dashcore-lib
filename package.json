@@ -127,7 +127,8 @@
     "inherits": "=2.0.1",
     "lodash": "^4.17.20",
     "unorm": "^1.6.0",
-    "events-browserify": "0.0.1"
+    "events-browserify": "0.0.1",
+    "EventEmitter": "^1.0.0"
   },
   "devDependencies": {
     "browserify-zlib": "^0.2.0",
